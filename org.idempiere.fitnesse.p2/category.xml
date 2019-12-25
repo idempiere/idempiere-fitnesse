@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.idempiere.fitnesse.feature_7.1.0.qualifier.jar" id="org.idempiere.fitnesse.feature" version="7.1.0.qualifier">
+      <category name="org.idempiere.fitnesse"/>
+   </feature>
+   <category-def name="org.idempiere.fitnesse" label="iDempiere Fitnesse"/>
+</site>
