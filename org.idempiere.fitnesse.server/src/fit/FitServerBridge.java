@@ -17,14 +17,13 @@ import java.net.Socket;
 
 import org.apache.log4j.Logger;
 
-import util.StreamReader;
-import fit.exception.FitParseException;
 import fitlibrary.log.FitLibraryLogger;
 import fitlibrary.runResults.TestResults;
 import fitlibrary.runResults.TestResultsOnCounts;
 import fitlibrary.suite.ReportListener;
 import fitlibrary.table.Table;
 import fitlibrary.table.TableFactory;
+import util.StreamReader;
 
 /* This is a variation of FitServer that's needed to run FitLibrary
  */
@@ -80,7 +79,7 @@ public abstract class FitServerBridge {
 					TestResults storyTestResults = doTables(document);
 					logger.trace("Finished running page");
 					suiteTestResults.add(storyTestResults);
-				} catch (FitParseException e) {
+				} catch (Exception e) {
 					exception(e);
 				}
 			}

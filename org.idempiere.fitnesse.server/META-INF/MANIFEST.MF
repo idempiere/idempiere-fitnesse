@@ -40,8 +40,8 @@ Bundle-ClassPath: .,
  lib/selenium-support.jar,
  lib/htmlunit-driver.jar,
  lib/fitnesse.jar,
- lib/fitlibrary-2.0.jar,
- lib/fitlibraryweb-2.1.jar
+ lib/fitlibrary.jar,
+ lib/fitlibraryweb.jar
 Web-ContextPath: fitnesse
 Export-Package: eg.triviaGameExample.fitnesseFixtures,
  fit,
