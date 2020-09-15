@@ -5,12 +5,15 @@ This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.ne
 
 ## What is new ? 
 * upgrade [FitnNesse](http://fitnesse.org/FrontPage) from v20111026 to v20200501 and [Selenium](https://www.selenium.dev/) from 2.42.2 to 3.141.59
-  *  fork and small fixes on outdated projetct fitlibrary and fitlibraryweb for make it work with newest versions
+  *  own fork of [FitLibrary](https://github.com/muriloht/fitlibrary-fitlibrary) and [FitLibraryWeb](https://github.com/muriloht/fitlibrary-fitlibraryweb)  projects for compatibilization with newest versions
 * JIRA contributions integrated
   * [FitNesse Rollback and InfoWindow read/run process](https://idempiere.atlassian.net/browse/IDEMPIERE-2860)
   * [FitNesse Update Fixture now understands and evaluate variables on where clause](https://idempiere.atlassian.net/browse/IDEMPIERE-3827)
   * removed the ZTL project as it's discontinued. [Read more...](https://code.google.com/archive/p/zk-ztl/)
   * [Fixture and test examples for screenshots automation](https://idempiere.atlassian.net/browse/IDEMPIERE-4029)
+* branches reorganization
+  * if you want to use the iDempiere Fitnesse project with an iDempiere version **<= 7.1** please use the **release-7.1** branch
+  * if you are usig the iDempiere developmant version **>= 7.1z** then you should use the **master** branch 
 
 ## Projects:
 * fitnesse - fitnesse server console
