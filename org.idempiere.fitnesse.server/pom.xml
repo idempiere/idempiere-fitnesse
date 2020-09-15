@@ -182,7 +182,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							<url>${url.file.srv}/fitlibraryweb-2.0.jar</url>
+							<url>${url.file.srv}/fitlibraryweb-2.1.jar</url>
 							<unpack>false</unpack>
 							<outputDirectory>lib</outputDirectory>
 							<retries>5</retries>

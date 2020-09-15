@@ -41,7 +41,7 @@ public class LoginTest {
 		options.setCapability("marionette", true);
 		driver = new FirefoxDriver(options);
 		actions = new Actions(driver);
-		baseUrl = "http://127.0.0.1:6002/";
+		baseUrl = "http://127.0.0.1:8080/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
