@@ -14,3 +14,6 @@ Check the bp balance before the document
 |actuallifetimevalue|          |
 |so_creditused      |          |
 |totalopenbalance   |          |
+
+!|Roll Back|
+|*RollBack*|TRUE|

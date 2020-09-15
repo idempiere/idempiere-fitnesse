@@ -8,3 +8,4 @@ This test tries to create a reference in the database, intentionally the !-Valid
 |ValidationType|Y            |
 |invalidcolumn|Y            |
 |*Save*Error*    |java.lang.Exception: Cannot set value of column|
+

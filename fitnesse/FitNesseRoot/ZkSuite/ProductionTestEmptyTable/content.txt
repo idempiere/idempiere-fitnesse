@@ -16,9 +16,10 @@
 |''window''|${windowId}|''click detail toolbar''|!-BtnNew-!|
 |''wait response''|
 |''text of''|${windowId} $recordInfo|is|!-+*1/1-!|
-|''window''|${windowId}|''click toolbar''|!-BtnParentRecord-!|
+|''window''|${windowId}|''click toolbar''|!-BtnShowMore-!|
+|''window''|${windowId}|''click toolbar''|!-MnitmBtnParentRecord-!|
 |''wait response''|
-|''window''|${windowId}|''click process button''|!-CreateFrom-!|
+|''click''|${windowId} $Production $CreateFrom|
 |''wait response''|
 |''click''|${windowId} @window[title="Create Production"] $Ok|
 |''wait response''|

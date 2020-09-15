@@ -59,6 +59,7 @@ public class DeleteRecord extends TableFixture {
 		}
 		Properties ctx = adempiereInstance.getAdempiereService().getCtx();
 		int windowNo = adempiereInstance.getAdempiereService().getWindowNo();
+		String trxName = adempiereInstance.getAdempiereService().get_TrxName();//red1
 
 		PO gpo = null;
 		String tableName = new String("");
@@ -106,16 +107,17 @@ public class DeleteRecord extends TableFixture {
 					wrong(i, 1);
 					return;
 				}
+				whereclause = new StringBuilder(Env.parseContext(ctx, windowNo, Util.lowerContextTableColumn(whereclause.toString()), false, false));
 				whereclause.insert(0, "(");
 				whereclause = whereclause.append(") AND AD_Client_ID=").append(Env.getAD_Client_ID(ctx));
 				String sql = "SELECT * FROM " + tableName + " WHERE "+ whereclause;
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
 				try {
-					pstmt = DB.prepareStatement(sql, null);
+					pstmt = DB.prepareStatement(sql, trxName);//red1
 					rs = pstmt.executeQuery();
 					if (rs.next()) {
-						gpo = table.getPO(rs, null);
+						gpo = table.getPO(rs, trxName);//red1
 					} else {
 						getCell(i, 1).addToBody("No record found: " + sql);
 						boolean ok = Util.evaluateError("No record found: ",cell_value, isErrorExpected);
@@ -138,7 +140,7 @@ public class DeleteRecord extends TableFixture {
 					}
 					
 					if (gpo != null) {
-						gpo.deleteEx(true);
+						gpo.deleteEx(true, trxName);//red1
 					}
 							
 				} catch (Exception e) {
@@ -159,7 +161,7 @@ public class DeleteRecord extends TableFixture {
 			} else {
 				// columns
 				if (tableOK) {
-					String value_evaluated = Util.evaluate(ctx, windowNo,cell_value, getCell(i, 1));
+					String value_evaluated = Util.evaluate(ctx, windowNo,cell_value, getCell(i, 1), trxName);
 					if (!alreadyread) {
 						// not read yet - add value to where clause						
 						if (whereclause.length() > 0) {

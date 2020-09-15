@@ -59,6 +59,7 @@ public class AssertRecord extends TableFixture {
 		}
 		Properties ctx = adempiereInstance.getAdempiereService().getCtx();
 		int windowNo = adempiereInstance.getAdempiereService().getWindowNo();
+		String trxName = adempiereInstance.getAdempiereService().get_TrxName();
 
 		PO gpo = null;
 		String tableName  = new String("");
@@ -104,17 +105,17 @@ public class AssertRecord extends TableFixture {
 					wrong(i, 1);
 					return;
 				}
-				whereclause.insert(0, "(");
-				whereclause.append(") AND AD_Client_ID IN (0,").append(Env.getAD_Client_ID(ctx)).append(")");
+				whereclause = new StringBuilder(Env.parseContext(ctx, windowNo, Util.lowerContextTableColumn(whereclause.toString()), false, false));
+				whereclause.append(" AND AD_Client_ID=").append(Env.getAD_Client_ID(ctx));
 				String sql = "SELECT * FROM " + tableName + " WHERE " + whereclause;
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;
 				try
 				{
-					pstmt = DB.prepareStatement(sql, null);
+					pstmt = DB.prepareStatement(sql, trxName);
 					rs = pstmt.executeQuery();
 					if (rs.next()) {
-						gpo = table.getPO(rs, null);
+						gpo = table.getPO(rs, trxName);
 						if (isErrorExpected) {
 							wrong(i,1);
 							return;	
@@ -167,7 +168,7 @@ public class AssertRecord extends TableFixture {
 				if (tableOK) {
 					if (! alreadyread) {
 						// not read yet - add value to where clause
-						String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1));
+						String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1), trxName);
 						if (whereclause.length() > 0) {
 							whereclause.insert(0, "(");
 							whereclause.append(") AND ");
@@ -180,7 +181,7 @@ public class AssertRecord extends TableFixture {
 							if (poinfo.getColumnIndex(cell_title) < 0) {
 								wrong(i, 0);
 							} else {
-								Object result = gpo.get_Value(cell_title);
+								Object result = gpo.get_Value(cell_title.toLowerCase());
 								if (result != null) {
 									getCell(i, 0).addToBody("<hr/>" + result.toString());
 									title_evaluated = result.toString();
@@ -188,13 +189,17 @@ public class AssertRecord extends TableFixture {
 
 								String value_evaluated = cell_value;
 								if (cell_value.startsWith("@")) {
-									value_evaluated = Util.evaluate(ctx, windowNo,cell_value, getCell(i, 1));
+									value_evaluated = Util.evaluate(ctx, windowNo,cell_value, getCell(i, 1), trxName);
 								}
 
 								if (title_evaluated.equals(value_evaluated)) {
 									right(i, 1);
 								} else {
-									wrong(i, 1);
+									//red1 check if numerical
+									if (numbers(title_evaluated,value_evaluated))
+										right(i, 1);
+									else
+										wrong(i, 1);
 								}
 							}
 						}
@@ -212,5 +217,20 @@ public class AssertRecord extends TableFixture {
 		}
 
 	} // doStaticTable
+	
+	private boolean numbers(String title_evaluated, String value_evaluated) {
+		Double num1 = 0.0d;
+		try
+		{
+		  num1 = Double.parseDouble(title_evaluated);
+		}
+		catch(NumberFormatException e)
+		{
+		  return false;
+		}
+		if (num1==(Double.parseDouble(value_evaluated)))
+			return true;
+		else return false;
+	}
 	
 } // AdempiereReadRecord

@@ -52,12 +52,13 @@ public class SetVariable extends TableFixture {
 		}
 		Properties ctx = adempiereInstance.getAdempiereService().getCtx();
 		int windowNo = adempiereInstance.getAdempiereService().getWindowNo();
+		String trxName = adempiereInstance.getAdempiereService().get_TrxName();
 
 		for (int i = 0; i < rows; i++) {
 			String cell_title = getText(i, 0);
 			String cell_value = getText(i, 1);
 			if (cell_title.startsWith("@") && cell_title.endsWith("@")) {
-				String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1));
+				String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1), trxName);
 				Env.setContext(ctx, windowNo, cell_title.substring(1, cell_title.length()-1), value_evaluated);
 			} else {
 				exception(getCell(i, 0), new Exception("Variable must start and end with @"));

@@ -17,7 +17,7 @@
 		<download.maven.version>1.4.1</download.maven.version>
 		<lifecycle.mapping.version>1.0.0</lifecycle.mapping.version>
 		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>
-		<url.file.srv>https://raw.githubusercontent.com/idempiere/binary.file/master</url.file.srv>
+		<url.file.srv>https://raw.githubusercontent.com/idempiere/idempiere-fitnesse/files/master</url.file.srv>
 		<!-- default value of properties, use when run without profile -->
 		<idempiere.core.repository.url>file:///${basedir}/../../idempiere/org.idempiere.p2/target/repository</idempiere.core.repository.url>
 	</properties>

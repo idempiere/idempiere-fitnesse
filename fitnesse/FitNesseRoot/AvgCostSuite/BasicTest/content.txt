@@ -34,3 +34,6 @@ Brief description of the tests:
 !include -c .CommonTests.CreateProductPrice
 !include -c .CommonTests.CreatePurchaseOrder
 !include -c .CommonTests.CreateMaterialReceipt
+
+!|Roll Back|
+|*RollBack*|TRUE|

@@ -8,7 +8,7 @@ org.idempiere.fitnesse.server/FitNesseRoot
 syntax: regexp
 adempiere
 **/lib/*.jar
-fitnesse/fitnesse.jar
+fitnesse/fitnesse-standalone.jar
 
 lib/plugins
 plugins/*.class
@@ -16,7 +16,7 @@ adempiere-local.properties
 
 .metadata
 keystore/*
-log/*
+log/
 PostgreSQL/*
 *.log
 Adempiere.properties
@@ -35,7 +35,9 @@ jettyhome/
 .recommenders/
 RemoteSystemsTempFiles
 
-fitnesse/FitNesseRoot/FitLibraryWeb/*.zip
+fitnesse/FitNesseRoot/**/*.zip
+fitnesse/FitNesseRoot/ErrorLogs/**
+fitnesse/FitNesseRoot/files/testResults/**
 fitnesse/bin
 selenese/bin
 ztl/bin

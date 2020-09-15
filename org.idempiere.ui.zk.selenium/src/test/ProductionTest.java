@@ -1,9 +1,10 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.idempiere.ui.zk.selenium.Zk;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -24,14 +25,16 @@ public class ProductionTest extends AbstractTestCase {
 		waitResponse();
 		
 		//check detail is shown for new record
+		clickToolbarButton(windowId, "BtnNew");
+
 		WebElement element = driver.findElement(Zk.jq("$"+windowId+" $detailPane @tabbox"));
 		
 		assertTrue(element != null && element.isDisplayed());
-		
+
 		search("$"+windowId+" $Production $M_Product_ID", "PatioSet");
 		waitResponse();
 		
-		type("$"+windowId+" $Production $ProductionQty @decimalbox", "1");
+		type("$"+windowId+" $Production $ProductionQty @decimalbox", "1", false);
 		
 		
 		clickToolbarButton(windowId, "BtnSave");
@@ -49,11 +52,14 @@ public class ProductionTest extends AbstractTestCase {
 		assertEquals("+*1/1", element.getText());
 		
 		//test for npe
-		clickToolbarButton(windowId, "BtnParentRecord");		
+		
+		clickToolbarButton(windowId, "BtnShowMore");		
+		clickToolbarButton(windowId, "MnitmBtnParentRecord");		
 		waitResponse();
 		
 		//create production lines
-		clickProcessButton(windowId, "CreateFrom");
+		clickButton("$"+windowId+" $Production $CreateFrom");
+
 		waitResponse();
 		clickButton("$"+windowId+" @window[title=\"Create Production\"] $Ok");
 		waitResponse();

@@ -20,5 +20,9 @@ This test creates a new tenant in the database.
 |IsUseProjectDimension    |Y                                                                            |
 |IsUseCampaignDimension   |N                                                                            |
 |IsUseSalesRegionDimension|N                                                                            |
-|CoAFile                  |${fitnesse_home}/../org.adempiere.server-feature/data/import/AccountingUS.csv|
+|CoAFile                  |${fitnesse_home}/../idempiere/org.adempiere.server-feature/data/import/AccountingUS.csv|
 |*Run*                    |                                                                             |
+
+
+!|Roll Back|
+|*RollBack*|TRUE|

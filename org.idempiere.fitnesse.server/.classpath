@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/fitlibrary-2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/fitlibraryweb-2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/fitnesse.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/htmlunit-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/byte-buddy.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-codec.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-exec.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/guava.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/hamcrest-all.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpclient.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/httpcore.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/okhttp.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/okio.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-chrome-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-edge-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-firefox-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-ie-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-java.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-opera-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-remote-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-safari-driver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-server.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-support.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/log4j.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/phantomjsdriver.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="src" path="src/"/>
-	<classpathentry exported="true" kind="lib" path="lib/fitlibrary.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/fitlibraryweb.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/fitnesse.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/log4j.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/phantomjsdriver.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/selenium-server-standalone.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

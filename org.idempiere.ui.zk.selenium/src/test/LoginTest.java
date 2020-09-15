@@ -10,6 +10,7 @@ import org.junit.*;
 public class LoginTest extends AbstractTestCase {
 	@Test
 	public void testLogin() throws Exception {
+		
 		login();			
 	}
 }

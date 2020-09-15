@@ -6,6 +6,24 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-server-standalone.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-api.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-chrome-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-edge-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-firefox-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-ie-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-java.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-opera-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-remote-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-safari-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-server.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-support.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/hamcrest-all.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/guava.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okhttp.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okio.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-exec.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.p2/target/repository/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

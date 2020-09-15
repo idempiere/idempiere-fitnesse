@@ -7,3 +7,6 @@
 |C_BP_Group_ID|103        |
 |PotentialLifeTimeValue|@random_number(-,,4,2)|
 |*Save*   |           |
+
+!|Roll Back|
+|*Commit*|TRUE|

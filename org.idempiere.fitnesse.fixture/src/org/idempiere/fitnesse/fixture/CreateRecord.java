@@ -61,6 +61,7 @@ public class CreateRecord extends TableFixture {
 		}
 		Properties ctx = adempiereInstance.getAdempiereService().getCtx();
 		int windowNo = adempiereInstance.getAdempiereService().getWindowNo();
+		String trxName = adempiereInstance.getAdempiereService().get_TrxName(); //red1
 		
 		PO gpo = null;
 		String tableName  = new String("");
@@ -93,7 +94,7 @@ public class CreateRecord extends TableFixture {
 					tableOK = false;
 				} else {
 					tableOK = true;
-					gpo = table.getPO(0, null);
+					gpo = table.getPO(0, trxName);
 				}
 		    	poinfo = POInfo.getPOInfo(ctx, table!=null ? table.getAD_Table_ID() : 0);
 			} else if (cell_title.equalsIgnoreCase("*Save*") || cell_title.equalsIgnoreCase("*Save*Error*")) {
@@ -111,7 +112,7 @@ public class CreateRecord extends TableFixture {
 						wrong(i,1);
 				} else {
 					if (columnsOK) {
-						if (!gpo.save()) {
+						if (!gpo.save(trxName)) {
 							StringBuilder msg = new StringBuilder();
 							Exception e = (Exception) ctx.get("org.compiere.util.CLogger.lastException");
 							if (e != null)
@@ -154,7 +155,7 @@ public class CreateRecord extends TableFixture {
 						gpo.set_CustomColumnReturningBoolean(columnName, cell_value);
 					} else {
 						Class<?> columnClass = poinfo.getColumnClass(idxcol);
-						String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1));
+						String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1), trxName);
 						// set value according to class
 						Object value = null;
 						if (org.compiere.util.Util.isEmpty(cell_value)) {
@@ -184,7 +185,7 @@ public class CreateRecord extends TableFixture {
 									// Evaluate the ID is from the actual client or system
 									String foreignTable = column.getReferenceTableName();
 									if (foreignTable != null) {
-										int foreignClient = DB.getSQLValueEx(null,
+										int foreignClient = DB.getSQLValueEx(trxName,
 												"SELECT AD_Client_ID FROM " + foreignTable + " WHERE " + foreignTable + "_ID=?",
 												intid);
 										if (foreignClient != 0 && foreignClient != Env.getAD_Client_ID(ctx)) {

@@ -2,9 +2,10 @@ package org.idempiere.fitnesse.server.slim;
 
 import java.util.logging.Logger;
 
-import fit.Counts;
 import org.idempiere.fitnesse.server.Parameters;
 import org.idempiere.fitnesse.server.Runner;
+
+import fit.Counts;
 import fitnesse.slim.JavaSlimFactory;
 
 /**
@@ -22,7 +23,7 @@ public class SlimServerRunner extends Runner {
 	@Override
 	protected Counts run(String[] params) throws Exception {
 		int portNumber = Integer.parseInt(params[1]);
-		new SlimServer(true, new JavaSlimFactory(), portNumber);
+		new SlimServer(true,  JavaSlimFactory.createJavaSlimFactory(null), portNumber);
 		return new Counts();
 	}
 

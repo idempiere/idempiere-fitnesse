@@ -1,0 +1,14 @@
+---
+Test
+---
+'''IDEMPIERE-4029 Update wiki screenshots'''
+
+
+!include -c ZkGardenAdminLogin
+
+'''Take Screenshot'''
+|''take screenshot''|!-Product-!|!-./screenshots-!|
+|''take screenshot''|!-Business Partner-!|!-./screenshots-!|
+|''take screenshot''|!-1099 Box-!|!-./screenshots-!|
+
+|''wait response''|

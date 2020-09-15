@@ -133,3 +133,6 @@ Check existance of cash payment (now on payment table)
 |description |                        |
 |processed   |                        |
 
+
+!|Roll Back|
+|*RollBack*|TRUE|

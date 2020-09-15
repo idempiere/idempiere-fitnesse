@@ -5,12 +5,11 @@ When you execute a suite page, !-FitNesse-! tests all the pages mentioned in !-!
 Create a simple test page
 
 |script|Page Builder|
-|line|!-!path classes-!|
-|line|!-!path fitnesse.jar-!|
+|line|${SUT_PATH}|
 |line|!-|!-fitnesse.testutil.PassFixture-!-!!-|-!|
 |page|!-TestPage-!|
 
-Create a Suite page that mentions the test page in a !-!test-! widget
+Create a Suite page that mentions the test page in a !-!see-! widget
 
 |script|Page Builder|
 |line|!-!see TestPage-!|
@@ -45,7 +44,7 @@ The error log page should not have any errors
 
 |Response Requester.|
 |uri   |valid?|
-|!-ErrorLogs.SuitePage-!|true|
+|!-SuitePage?executionLog-!|true|
 
 |Response Examiner.|
 |contents?|

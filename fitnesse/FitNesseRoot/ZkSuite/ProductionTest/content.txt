@@ -18,7 +18,8 @@
 |''window''|${windowId}|''click detail toolbar''|!-BtnEdit-!|
 |''wait response''|
 |''text of''|${windowId} $recordInfo|is|!-+*1/1-!|
-|''window''|${windowId}|''click toolbar''|!-BtnParentRecord-!|
+|''window''|${windowId}|''click toolbar''|!-BtnShowMore-!|
+|''window''|${windowId}|''click toolbar''|!-MnitmBtnParentRecord-!|
 |''wait response''|
 |''click''|${windowId} $Production $CreateFrom|
 |''wait response''|

@@ -50,3 +50,6 @@ Post
 |*Save*        |                            |
 
 Check the postings
+
+!|Roll Back|
+|*RollBack*|TRUE|

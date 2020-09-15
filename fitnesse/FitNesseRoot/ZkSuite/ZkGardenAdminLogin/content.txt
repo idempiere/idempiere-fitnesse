@@ -19,7 +19,7 @@
 
 '''Select Role'''
 |''element''|$rolePanel $lstClient|''exists''|
-|''element invisible''|$rolePanel $lstClient|
+'''|''element invisible''|$rolePanel $lstClient|'''
 |''combobox''|$rolePanel $lstRole|''select item''|!-GardenWorld Admin-!|
 |''combobox''|$rolePanel $lstOrganisation|''select item''|HQ|
 |''click''|$rolePanel $Ok|

@@ -1,25 +1,23 @@
 Create a simple test page
 
-!|script|Page Builder|
-|line|!-!path classes-!|
-|line|!-!path fitnesse.jar-!|
-|line|!-!|-!fitnesse.testutil.${FIXTURE_NAME}!-|-!|
-|line|!-|blah|-!|
-|page|!-TestPage-!|
+!|script|Page Builder                                |
+|line   |${SUT_PATH}                                 |
+|line   |!-!|-!fitnesse.testutil.${FIXTURE_NAME}!-|-!|
+|line   |!-|blah|-!                                  |
+|page   |!-TestPage-!                                |
 
 Now run the test page.
 
-|Response Requester.|
-|uri   |valid?|
-|!-TestPage?responder=test-!|true|
+|Response Requester.               |
+|uri                        |valid?|
+|!-TestPage?responder=test-!|true  |
 
 |Response Examiner.|
-|contents?|
-||
+|contents?         |
+|                  |
 
 Check the status message.
 
-|Response Examiner.|
-|type  |pattern|matches?|
-|contents|<div id="execution-status">.*?${EXPECTED_STATUS_MESSAGE}.*?</div>|true|
-|contents|<div id="execution-status">.*?<img.*?src="${EXPECTED_ICON_URL}".*?/>.*?</div>|true|
+|Response Examiner.                                                                            |
+|type    |pattern                                                                     |matches?|
+|contents|<a href=\\"\?executionLog\\" class=\\"${EXPECTED_STYLE}\\">Execution Log</a>|true    |

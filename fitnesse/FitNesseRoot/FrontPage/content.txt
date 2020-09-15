@@ -15,4 +15,4 @@ ZkSuite
 | [[User Guide][FitNesse.UserGuide]]|''Answer the rest of your questions here.''|
 | [[Acceptance Tests][FitNesse.SuiteAcceptanceTests]]|''FitNesse's suite of Acceptance Tests''|
 
-!note Release v20111026
+!note Release v20200501

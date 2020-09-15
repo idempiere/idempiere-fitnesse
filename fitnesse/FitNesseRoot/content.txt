@@ -2,7 +2,7 @@ Define the global path:
 
 Where to find the fixtures classes: ( i.e. /home/hengsin/workspace/idempiere-trekglobal/fitnesse/bin )
 
-!path ${fitnesse_home}/fitnesse.jar:${fitnesse_home}/lib/*.jar:${fitnesse_home}/bin
+!path ${fitnesse_home}/fitnesse-standalone.jar:${fitnesse_home}/lib/*.jar:${fitnesse_home}/bin
 
 Define the command to access iDempiere fitnesse servlet
 

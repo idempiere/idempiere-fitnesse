@@ -10,11 +10,13 @@ import org.idempiere.ui.zk.selenium.Widget;
 import org.idempiere.ui.zk.selenium.Zk;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -91,6 +93,14 @@ public class ZkFixture extends SpiderFixture {
 		widget.execute(webDriver, "open()");
 		waitResponse();
 		List<WebElement> list = webDriver.findElements(Zk.jq(locator + " @comboitem"));
+		if (list == null || list.size() == 0)
+		{	
+			WebElement element = widget.$n(webDriver, "real");
+			element.click();
+			Actions actions = new Actions(webDriver);
+			actions.sendKeys(Keys.ENTER).perform();
+
+		} 
 		if (list != null && list.size() > 0) {
 			for(WebElement element : list) {
 				widget = new Widget("#"+element.getAttribute("id"));
@@ -156,7 +166,7 @@ public class ZkFixture extends SpiderFixture {
 	//--- Search (lookup) --
 	@SimpleAction(wiki = "|''<i>lookup</i>''|xpath, id or other locator|''<i>search</i>''|value|", tooltip = "Search lookup with value.")
 	public void lookupSearch(String locator, String value) {
-		Widget widget = new Widget(locator + " @textbox");
+		Widget widget = new Widget(locator + " @combobox");
 		WebElement element = widget.findElement(webDriver);
 		element.click();
 		widget.execute(webDriver, "setValue(\""+value+"\")");
@@ -166,13 +176,13 @@ public class ZkFixture extends SpiderFixture {
 	// ---- window ( tab ) ---
 	@SimpleAction(wiki = "|''<i>open window</i>''|menu label|", tooltip = "Open window with label.")
 	public void openWindow(String label) {		
-		Widget widget = new Widget("$treeSearchCombo");
+		Widget widget = new Widget("$globalSearchBox");
 		String search = label.indexOf("&") > 0 ? label.substring(0, label.indexOf("&")) : label;
 		WebElement element = widget.$n(webDriver, "real");
 		element.clear();
 		element.sendKeys(search);
 		waitResponse();
-		comboboxSelectItem("$treeSearchCombo", label);		
+		comboboxSelectItem("$globalSearchBox", label);		
 	}
 	
 	@SimpleAction(wiki = "|''<i>window</i>''|xpath, id or other locator|''<i>click process button</i>''|button id|", tooltip = "Click a window's process button.")
@@ -288,11 +298,38 @@ public class ZkFixture extends SpiderFixture {
 		}
 	}
 	
+	// ---- window ( tab ) ---
+	@SimpleAction(wiki = "|''<i>take screenshot</i>''|menu label|''<i>path</i>''|path|", tooltip = "Open menu option with label, take a screenshot and close the tab.")
+	public void takeScreenshot(String label, String path) {		
+		openWindow(label);
+		waitResponse();
+		List<WebElement> list = webDriver.findElements(Zk.jq("$simpleSearch $btnOk"));
+		if ( list != null && list.size() > 0)
+			click("$simpleSearch $btnOk");
+		waitResponseWithTimeout(7000);
+		screenShot(true, path, label);
+		waitResponse();
+		//closeWindow(label);
+		webDriver.findElement(By.className("z-tab-button")).click();
+		waitResponse();
+		list = webDriver.findElements(Zk.jq("$btnOk"));
+		if ( list != null && list.size() > 0)
+		{
+			click("$btnOk");
+			waitResponse();
+		}
+	}
+
+	@SimpleAction(wiki = "|''<i>close window</i>''|menu label|", tooltip = "Close the window.")
+	public void closeWindow(String $label) {
+		Widget widget = new Widget("$desktop_tabbox @tabs @tab[label=\"" + $label + "\"]");
+		widget.$n(webDriver, "cnt").click();
+
+	}
+	
 	protected String getEval(String script) {
 		return String.valueOf(executeJavaScript("return ("+ script+");"));
 	}
-	
-	
 	
 	@Override
 	public WebDriver webDriver() {
@@ -307,19 +344,38 @@ public class ZkFixture extends SpiderFixture {
 		return super.webDriver();
 	}
 	
-	public void screenShot() {
+	public void screenShot(boolean saveToFile, String path, String name) {
+		TakesScreenshot ts = null;
 		if (webDriver instanceof TakesScreenshot)
 		{
-			String s = ((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
-			show("<img src=\"data:image/png;base64,"+s+"\" />");
+			ts = ((TakesScreenshot)webDriver);
+			
 		}
 		else
 		{
 			Augmenter augmenter = new Augmenter(); 
-			TakesScreenshot ts = (TakesScreenshot) augmenter.augment(webDriver);
-			String s = ts.getScreenshotAs(OutputType.BASE64);
-			show("<img src=\"data:image/png;base64,"+s+"\" />");
+			ts = (TakesScreenshot) augmenter.augment(webDriver);
 		}
+		if (saveToFile) {
+			File screenshot = ts.getScreenshotAs(OutputType.FILE);
+			
+			File file = null; 
+			if (screenshot != null) {
+				try {
+					File directory = new File(path);
+				    if (! directory.exists()){
+				        directory.mkdirs();
+				    }
+					file = new File(path + "/" + name + ".png");
+					FileHandler.copy(screenshot, file);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		String s = ((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
+		show("<img src=\"data:image/png;base64,"+s+"\" />");
 	}
 
 	public void maximizeWindow() {

@@ -1,13 +1,11 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <properties>
-	<Edit/>
-	<Files/>
-	<Help/>
-	<Properties/>
-	<Prune/>
-	<RecentChanges/>
-	<Search/>
-	<Suites/>
-	<Versions/>
-	<WhereUsed/>
+    <Edit/>
+    <Files/>
+    <Properties/>
+    <Prune/>
+    <RecentChanges/>
+    <Search/>
+    <Versions/>
+    <WhereUsed/>
 </properties>

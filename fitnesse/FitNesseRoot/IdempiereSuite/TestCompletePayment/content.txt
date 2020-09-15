@@ -28,3 +28,6 @@
 |C_Payment_ID|@C_Payment.C_Payment_ID@|
 |docAction   |CO                      |
 |*Save*  |         |
+
+!|Roll Back|
+|*RollBack*|TRUE|

@@ -8,7 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.WrapsDriver;
+import org.openqa.selenium.WrapsDriver;
 
 public class Widget extends By {
 
@@ -61,7 +61,7 @@ public class Widget extends By {
 	public Object eval(WebDriver driver, String command) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		StringBuilder builder = getWidgetLocatorScript(locator);
-		command = command.replace("'", "\\'");
+		//command = command.replace("'", "\\'");
 		builder.insert(0, "return ");
 		builder.append(".").append(command).append(";");
 		return executor.executeScript(builder.toString());

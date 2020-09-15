@@ -12,9 +12,9 @@
 |!-TopLevelPage-!|true||
 
  * Examine the requested page to be sure the link to itself is displayed.
-!|Response Examiner.|
-|type|pattern|matches?|
-|contents|<span class="page_title">TopLevelPage</span>|true|
+!|Response Examiner.                                        |
+|type    |pattern                                  |matches?|
+|contents|<${TITLE_TAG}>TopLevelPage</${TITLE_TAG}>|true    |
 
 !3 A second level page - the top level should link up, the current page should not link.
  * Create a top level page
@@ -28,10 +28,10 @@
 |!-TopLevelPage.SecondLevelPage-!|true||
 
  * Examine the requested page to be sure the link to itself is displayed.
-!|Response Examiner.|
-|type|pattern|matches?|
-|contents|<a href="/TopLevelPage">TopLevelPage</a>.|true|
-|contents|<span class="page_title">SecondLevelPage</span>|true|
+!|Response Examiner.                                           |
+|type    |pattern                                     |matches?|
+|contents|<a href="/TopLevelPage">TopLevelPage</a>.   |true    |
+|contents|<${TITLE_TAG}>SecondLevelPage</${TITLE_TAG}>|true    |
 
 !3 A second level page - the top four levels should link up, the current page should not link.
  * Create a fifth level page
@@ -45,10 +45,10 @@
 |!-TopLevelPage.SecondLevelPage.ThirdLevelPage.FourthLevelPage.FifthLevelPage-!|true||
 
  * Examine the requested page to be sure the link to itself is displayed.
-!|Response Examiner.|
-|line|inOrder?|
-|<a href="/TopLevelPage">TopLevelPage</a>.|true|
-|<a href="/TopLevelPage.SecondLevelPage">SecondLevelPage</a>.|true|
-|<a href="/TopLevelPage.SecondLevelPage.ThirdLevelPage">ThirdLevelPage</a>.|true|
-|<a href="/TopLevelPage.SecondLevelPage.ThirdLevelPage.FourthLevelPage">FourthLevelPage</a>.|true|
-|<br/><span class="page_title">FifthLevelPage</span>|true|
+!|Response Examiner.                                                                                         |
+|line                                                                                               |inOrder?|
+|<li><a href="/TopLevelPage">TopLevelPage</a></li>                                                  |true    |
+|<li><a href="/TopLevelPage.SecondLevelPage">SecondLevelPage</a></li>                               |true    |
+|<li><a href="/TopLevelPage.SecondLevelPage.ThirdLevelPage">ThirdLevelPage</a></li>                 |true    |
+|<li><a href="/TopLevelPage.SecondLevelPage.ThirdLevelPage.FourthLevelPage">FourthLevelPage</a></li>|true    |
+|<${TITLE_TAG}>FifthLevelPage</${TITLE_TAG}>                                                        |true    |

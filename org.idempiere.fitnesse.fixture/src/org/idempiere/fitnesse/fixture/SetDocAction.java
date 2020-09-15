@@ -57,6 +57,7 @@ public class SetDocAction extends TableFixture {
 		}
 		Properties ctx = adempiereInstance.getAdempiereService().getCtx();
 		int windowNo = adempiereInstance.getAdempiereService().getWindowNo();
+		String trxName = adempiereInstance.getAdempiereService().get_TrxName(); //red1
 
 		PO gpo = null;
 		String tableName  = new String("");
@@ -96,10 +97,10 @@ public class SetDocAction extends TableFixture {
 					return;
 				}
 
-				Trx trx = Trx.get(Trx.createTrxName("FixtureSetDocAction"), true);
-				trx.setDisplayName(getClass().getName()+"_doStaticTable");
+				Trx trx = Trx.get(trxName, true);
+				//trx.setDisplayName(getClass().getName()+"_doStaticTable");
 
-				gpo = table.getPO(recordID, trx.getTrxName());
+				gpo = table.getPO(recordID, trxName);
 				if (gpo == null) {
 					exception(getCell(i, 1), new Exception("No Record " + recordID + " in " + tableName));
 					return;
@@ -122,7 +123,7 @@ public class SetDocAction extends TableFixture {
 						exception(getCell(i, 1), new Exception("No Record " + recordID + " in " + tableName));
 						return;
 					}
-					if (!gpo.save()) {
+					if (!gpo.save(trxName)) {
 						exception(getCell(i, 1), new Exception("Cannot save before setDocAction: " + CLogger.retrieveErrorString("no log message")));
 						return;
 					}
@@ -139,7 +140,7 @@ public class SetDocAction extends TableFixture {
 				}
 
 				// close the trx
-				if (!gpo.save()) {
+				if (!gpo.save(trxName)) {
 					exception(getCell(i, 1), new Exception("Cannot save after setDocAction: " + CLogger.retrieveErrorString("no log message")));
 					return;
 				}
@@ -149,7 +150,7 @@ public class SetDocAction extends TableFixture {
 					return;
 				}
 
-				trx.close();
+				//red1				trx.close(); -- otherwise cannot retrieve to rollback
 				
 				// Now validate the expected status according to DocAction
 
@@ -165,7 +166,7 @@ public class SetDocAction extends TableFixture {
 			} else {
 				if (tableOK) {
 					columnName = cell_title;
-					String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1));
+					String value_evaluated = Util.evaluate(ctx, windowNo, cell_value, getCell(i, 1), trxName);
 					if (columnName.equalsIgnoreCase(tableName + "_ID")) {
 						try {
 							recordID  = Integer.parseInt(value_evaluated);

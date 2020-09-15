@@ -35,35 +35,22 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>fitnesse.lib</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>org.fitnesse</groupId>
-									<artifactId>fitnesse</artifactId>
-									<version>20111025</version>
-								</artifactItem>
-							</artifactItems>
-							<outputDirectory>../fitnesse</outputDirectory>
-							<stripVersion>true</stripVersion>
-							<overWriteReleases>true</overWriteReleases>
-							<overWriteSnapshots>true</overWriteSnapshots>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>com.googlecode.maven-download-plugin</groupId>
 				<artifactId>download-maven-plugin</artifactId>
 				<executions>
+					<execution>
+						<id>download-fitnesse-standalone</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>wget</goal>
+						</goals>
+						<configuration>
+							<url>${url.file.srv}/fitnesse-standalone.jar</url>
+							<unpack>false</unpack>
+							<outputDirectory>../fitnesse</outputDirectory>
+							<retries>5</retries>
+						</configuration>
+					</execution>
 					<execution>
 						<id>download-fitnesse-test-1</id>
 						<phase>validate</phase>
@@ -71,7 +58,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							<url>${url.file.srv}/extra.jar/101-20121212164242.zip</url>
+							<url>${url.file.srv}/101-20121212164242.zip</url>
 							<unpack>false</unpack>
 							<outputDirectory>../fitnesse/FitNesseRoot/FitLibraryWeb</outputDirectory>
 							<retries>5</retries>
@@ -84,7 +71,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							<url>${url.file.srv}/extra.jar/21-20121212154702.zip</url>
+							<url>${url.file.srv}/21-20121212154702.zip</url>
 							<unpack>false</unpack>
 							<outputDirectory>../fitnesse/FitNesseRoot/FitLibraryWeb</outputDirectory>
 							<retries>5</retries>
@@ -97,7 +84,7 @@
 							<goal>wget</goal>
 						</goals>
 						<configuration>
-							<url>${url.file.srv}/extra.jar/6-20121212124109.zip</url>
+							<url>${url.file.srv}/6-20121212124109.zip</url>
 							<unpack>false</unpack>
 							<outputDirectory>../fitnesse/FitNesseRoot/FitLibraryWeb</outputDirectory>
 							<retries>5</retries>

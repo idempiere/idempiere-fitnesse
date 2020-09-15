@@ -19,7 +19,7 @@ public class ChangeRoleTest extends AbstractTestCase {
 		waitResponse();
 		
 		// wait for home page
-		selectRole("GardenWorld", "GardenWorld User", "HQ");
+		selectRole("GardenWorld", "GardenWorld User", "HQ", "HQ Warehouse");
 
 		WebElement element = waitForElement("$loginUserAndRole");
 		
