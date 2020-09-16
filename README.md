@@ -22,8 +22,9 @@ This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.ne
 * org.idempiere.fitnesse.parent - parent pom project
 * org.idempiere.fitnesse.server - web server for fitnesse fixture
 * org.idempiere.fitnesse-feature - main feature for P2
-* org.idempiere.fitrecorder - recorder to help build fixture
+* org.idempiere.fitrecorder - recorder to help build fixture. [read more...](https://wiki.idempiere.org/en/Fitnesse_Recorder)
 * org.idempiere.ui.zk.selenium - selenium support for zk web client
+* selenese - example test cases exported from Selenium IDE ( JUnit4 + WebDriver ).[Read more...](https://wiki.idempiere.org/en/Selenium)
 
 ## Usage
 
@@ -42,8 +43,6 @@ Note that you will need select and start the fitnesse and selenium plugins when 
 
 For more instructions you can check [this page](https://wiki.idempiere.org/en/Fitnesse.HowTo)
  
-#### Folder layout for development environment
-
 ### Deployment on existing servers
 * at idempiere-fitnesse, run mvn verify 
 * copy deploy-fitnesse.sh to your idempiere instance's root folder
