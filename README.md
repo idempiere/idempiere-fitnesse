@@ -29,12 +29,20 @@ This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.ne
 
 Here you can find some instructions FitNesse integration usage for development and deployment on already existing servers.
 
-### Folder layout for development environment
+### Development Environment
+ You need to configure your [development environment](https://wiki.idempiere.org/en/Install_Development_Prerequisites) and then import the iDempiere Fitnesse project on your workspace taking care about the following folder structure:
+
 * idempiere
 * idempiere-fitnesse
   * org.idempiere.fitnesse.*
   * org.idempiere.fitrecorder
   * org.idempiere.ui.zk.selenium
+
+Note that you will need select and start the fitnesse and selenium plugins when launching the server with **server.product.launch**  or **server.product.functionaltest.launch**.
+
+For more instructions you can check [this page](https://wiki.idempiere.org/en/Fitnesse.HowTo)
+ 
+#### Folder layout for development environment
 
 ### Deployment on existing servers
 * at idempiere-fitnesse, run mvn verify 
