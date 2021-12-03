@@ -3,7 +3,7 @@ The iDempiere FitNesse is a set of project that aims to easy the integration and
 
 This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.net/browse/IDEMPIERE-206) and was moved from core with the [IDEMPIERE-4138](https://idempiere.atlassian.net/browse/IDEMPIERE-4138).
 
-## What is new ? 
+## What is new ?
 * upgrade [FitnNesse](http://fitnesse.org/FrontPage) from v20111026 to v20200501 and [Selenium](https://www.selenium.dev/) from 2.42.2 to 3.141.59
   *  own fork of [FitLibrary](https://github.com/muriloht/fitlibrary-fitlibrary) and [FitLibraryWeb](https://github.com/muriloht/fitlibrary-fitlibraryweb)  projects for compatibilization with newest versions
 * JIRA contributions integrated
@@ -13,7 +13,7 @@ This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.ne
   * [Fixture and test examples for screenshots automation](https://idempiere.atlassian.net/browse/IDEMPIERE-4029)
 * branches reorganization
   * if you want to use the iDempiere Fitnesse project with an iDempiere version **<= 7.1** please use the **release-7.1** branch
-  * if you are usig the iDempiere developmant version **>= 7.1z** then you should use the **master** branch 
+  * if you are using the iDempiere stable or development version **>= 9.0** then you should use the **master** branch
 
 ## Projects:
 * fitnesse - fitnesse server console
@@ -42,9 +42,9 @@ Here you can find some instructions FitNesse integration usage for development a
 Note that you will need select and start the fitnesse and selenium plugins when launching the server with **server.product.launch**  or **server.product.functionaltest.launch**.
 
 For more instructions you can check [this page](https://wiki.idempiere.org/en/Fitnesse.HowTo)
- 
+
 ### Deployment on existing servers
-* at idempiere-fitnesse, run mvn verify 
+* at idempiere-fitnesse, run mvn verify
 * copy deploy-fitnesse.sh to your idempiere instance's root folder
 * at your idempiere instance's root folder (for instance, /opt/idempiere), run ./deploy-fitnesse.sh <file or url path to org.idempiere.fitnesse.p2/target/repository>
 * for e.g, if your source is at /ws/idempiere-fitnesse, ./deploy-fitnesse.sh file:////ws/idempiere-fitnesse/org.idempiere.fitnesse.p2/target/repository
@@ -53,7 +53,7 @@ For more instructions you can check [this page](https://wiki.idempiere.org/en/Fi
 
 ## TODO
 
-* Test and create SLIM test cases 
+* Test and create SLIM test cases
 * Create more test suites for core System and Garden World
 * Integrate [ZATS](https://www.zkoss.org/product/zats) for ZK interface automated tests
 
