@@ -1,2 +1,2 @@
-[[Front Page][.FrontPage]] | [[User Guide][.FitNesse.UserGuide]]
+[[Front Page][.FrontPage]] | [[User Guide][.FitNesse.UserGuide]] | [[root][root]] (for global !-!path's-!, ''etc.'') | Press '?' for keyboard shortcuts  | [[Plugins][.PlugIns]] | [[Contact][http://fitnesse.org/StayInformed]] | [[(edit)][.PageFooter?edit]]
 [[root][root]] (for global !-!path's-!, ''etc.'')

@@ -36,22 +36,27 @@
 								<artifactItem>
 								<groupId>org.seleniumhq.selenium</groupId>
  							        <artifactId>selenium-java</artifactId>
- 							        <version>3.141.59</version>
+ 							        <version>4.6.0</version>
+ 								</artifactItem>
+								<artifactItem>
+								<groupId>org.seleniumhq.selenium</groupId>
+ 							        <artifactId>selenium-json</artifactId>
+ 							        <version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
      								<artifactId>selenium-firefox-driver</artifactId>
-     								<version>3.141.59</version>
+     								<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								  	<groupId>org.seleniumhq.selenium</groupId>
    								  	<artifactId>selenium-support</artifactId>
-  								  	<version>3.141.59</version>
+  								  	<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
 									<groupId>org.seleniumhq.selenium</groupId>
 									<artifactId>selenium-api</artifactId>
- 									<version>3.141.59</version>
+ 									<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  									<groupId>org.seleniumhq.selenium</groupId>
@@ -63,36 +68,56 @@
 								    <artifactId>htmlunit-driver</artifactId>
 								    <version>2.43.1</version>
 								</artifactItem>
+								<artifactItem>
+ 								    <groupId>org.seleniumhq.selenium</groupId>
+     								<artifactId>selenium-manager</artifactId>
+     								<version>4.6.0</version>
+ 								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
      								<artifactId>selenium-remote-driver</artifactId>
-     								<version>3.141.59</version>
+     								<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
      								<artifactId>selenium-safari-driver</artifactId>
-     								<version>3.141.59</version>
+     								<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
      								<artifactId>selenium-opera-driver</artifactId>
-     								<version>3.141.59</version>
+     								<version>4.4.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
  								    <artifactId>selenium-ie-driver</artifactId>
- 								    <version>3.141.59</version>
+ 								    <version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
      								<artifactId>selenium-edge-driver</artifactId>
-     								<version>3.141.59</version>
+     								<version>4.6.0</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.seleniumhq.selenium</groupId>
  								    <artifactId>selenium-chrome-driver</artifactId>
- 								    <version>3.141.59</version>
+ 								    <version>4.6.0</version>
  								</artifactItem>
+ 								<artifactItem>
+ 								    <groupId>org.seleniumhq.selenium</groupId>
+ 								    <artifactId>selenium-chromium-driver</artifactId>
+ 								    <version>4.6.0</version>
+ 								</artifactItem>
+ 								<artifactItem>
+								    <groupId>org.seleniumhq.selenium</groupId>
+								    <artifactId>selenium-http</artifactId>
+								    <version>4.6.0</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>dev.failsafe</groupId>
+								    <artifactId>failsafe</artifactId>
+								    <version>3.3.0</version>
+								</artifactItem>
  								<artifactItem>
  								    <groupId>org.apache.httpcomponents</groupId>
  								    <artifactId>httpcore</artifactId>
@@ -136,7 +161,7 @@
  								<artifactItem>
  								    <groupId>com.google.guava</groupId>
  								    <artifactId>guava</artifactId>
- 								    <version>25.0-jre</version>
+ 								    <version>31.1-jre</version>
  								</artifactItem>
  								<artifactItem>
  								    <groupId>org.hamcrest</groupId>
@@ -146,7 +171,102 @@
 								<artifactItem>
 									<groupId>org.fitnesse</groupId>
 									<artifactId>fitnesse</artifactId>
-									<version>20200501</version>
+									<version>20221102</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-buffer</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>org.asynchttpclient</groupId>
+								    <artifactId>async-http-client</artifactId>
+								    <version>2.12.3</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>org.asynchttpclient</groupId>
+								    <artifactId>async-http-client-netty-utils</artifactId>
+								    <version>2.12.3</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-codec</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-codec-http</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-codec-socks</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-common</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-handler</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-handler-proxy</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.typesafe.netty</groupId>
+									<artifactId>netty-reactive-streams</artifactId>
+									<version>1.0.4</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-resolver</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport-classes-epoll</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport-classes-kqueue</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport-native-epoll</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport-native-kqueue</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.netty</groupId>
+								    <artifactId>netty-transport-native-unix-common</artifactId>
+								    <version>4.1.85.Final</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>org.reactivestreams</groupId>
+								    <artifactId>reactive-streams</artifactId>
+								    <version>1.0.4</version>
+								</artifactItem>
+								<artifactItem>
+								    <groupId>io.github.bonigarcia</groupId>
+								    <artifactId>webdrivermanager</artifactId>
+								    <version>5.3.1</version>
 								</artifactItem>
 							</artifactItems>
 							<outputDirectory>lib</outputDirectory>

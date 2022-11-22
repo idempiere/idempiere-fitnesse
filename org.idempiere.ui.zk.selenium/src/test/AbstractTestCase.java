@@ -38,7 +38,7 @@ public class AbstractTestCase {
 		driver = new FirefoxDriver();
 		actions = new Actions(driver);
 //		driver = new ChromeDriver();
-		baseUrl = "http://localhost:8080/webui/";
+		baseUrl = "https://localhost:8080/webui/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().window().setSize(new Dimension(1920, 1080));

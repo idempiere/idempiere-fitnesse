@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry exported="true" kind="lib" path="lib/netty-reactive-streams.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/webdrivermanager.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-manager.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-json.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/reactive-streams.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/async-http-client.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/async-http-client-netty-utils.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-all.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-buffer.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-codec.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-codec-http.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-codec-socks.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-common.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-handler.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-handler-proxy.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-resolver.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-classes-epoll.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-classes-kqueue.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-native-epoll.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-native-kqueue.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-native-unix-common.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/failsafe.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-http.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/selenium-chromium-driver.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
 		<attributes>
 			<attribute name="module" value="true"/>

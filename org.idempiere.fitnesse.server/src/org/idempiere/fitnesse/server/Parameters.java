@@ -23,7 +23,7 @@ public abstract class Parameters {
 	protected static final String FIT_PAGE = "fitpage";
 
 	protected static final String DEFAULT_HOST = "localhost";
-	protected static final String DEFAULT_PORT = "8087";
+	protected static final String DEFAULT_PORT = "8089";
 	protected static final String DEFAULT_FIT_PAGE = "FrontPage";
 	protected static final String DEFAULT_HTML_FILE_FORMAT = "-html";
 	protected static final String DEFAULT_XML_FILE_FORMAT = "-xml";

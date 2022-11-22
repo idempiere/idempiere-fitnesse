@@ -6,24 +6,59 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/org.idempiere.p2/target/repository/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/async-http-client.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/async-http-client-netty-utils.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/byte-buddy.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-exec.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/failsafe.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/fitlibrary.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/fitlibraryweb.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/fitnesse.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/fitnesse-standalone.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/guava.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/hamcrest-all.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/htmlunit-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/httpclient.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/httpcore.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-all.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-buffer.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-codec.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-codec-http.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-codec-socks.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-common.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-handler.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-handler-proxy.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-reactive-streams.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-resolver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport-classes-epoll.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport-classes-kqueue.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport-native-epoll.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport-native-kqueue.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/netty-transport-native-unix-common.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okhttp.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okio.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/phantomjsdriver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/reactive-streams.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-api.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-chrome-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-chromium-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-edge-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-firefox-driver.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-http.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-ie-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-java.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-json.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-manager.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-opera-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-remote-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-safari-driver.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-server.jar"/>
 	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/selenium-support.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/hamcrest-all.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/guava.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okhttp.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/okio.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-codec.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-exec.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/commons-logging.jar"/>
-	<classpathentry kind="lib" path="/org.idempiere.p2/target/repository/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+	<classpathentry kind="lib" path="/org.idempiere.fitnesse.server/lib/webdrivermanager.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -11,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -40,14 +40,14 @@ public class LoginTest {
 		options.setCapability("marionette", true);
 		driver = new FirefoxDriver(options);
 		actions = new Actions(driver);
-		baseUrl = "http://127.0.0.1:8080/";
+		baseUrl = "https://127.0.0.1:8080/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@Test
 	public void testLogin() throws Exception {
 
-		// open | /webui/ | 
+		// open | /webui/ |
 		driver.get(baseUrl + "webui/");
 		waitResponse(5000);
 
@@ -55,7 +55,7 @@ public class LoginTest {
 		// type | id=borderlayout_center_box_window_loginPanel_txtUserId | GardenAdmin
 		driver.findElement(By.id("borderlayout_center_box_window_loginPanel_txtUserId")).clear();
 		driver.findElement(By.id("borderlayout_center_box_window_loginPanel_txtUserId")).sendKeys("GardenAdmin");
-		
+
 		// fireEvent | id=loginPanel_grdLogin_rowUser_txtUserId | blur
 		// not needed for webdriver
 		// type | id=borderlayout_center_box_window_loginPanel_txtPassword | GardenAdmin
@@ -63,11 +63,11 @@ public class LoginTest {
 		driver.findElement(By.id("borderlayout_center_box_window_loginPanel_txtPassword")).sendKeys("GardenAdmin");
 		// fireEvent | id=loginPanel_grdLogin_rowPassword_txtPassword | blur
 		// not needed for webdriver
-		// click | id=borderlayout_center_box_window_loginPanel_chkSelectRole-real | 
+		// click | id=borderlayout_center_box_window_loginPanel_chkSelectRole-real |
 		driver.findElement(By.id("borderlayout_center_box_window_loginPanel_chkSelectRole-real")).click();
 		// click | borderlayout_center_box_window_loginPanel_Ok | 10
 		driver.findElement(By.id("borderlayout_center_box_window_loginPanel_Ok")).click();
-		// waitForElementPresent | id=borderlayout_center_box_window_rolePanel_lstClient-btn | 
+		// waitForElementPresent | id=borderlayout_center_box_window_rolePanel_lstClient-btn |
 		for (int second = 0;; second++) {
 			if (second >= 60) fail("timeout");
 			try { if (isElementPresent(By.id("borderlayout_center_box_window_rolePanel_lstClient-btn"))) break; } catch (Exception e) {}
@@ -77,24 +77,24 @@ public class LoginTest {
 		WebElement lstClient = driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstClient"));
 		boolean lstClientEnable = Arrays.asList(lstClient.getAttribute("class").split(" ")).contains("z-combobox-disabled");
 		if (lstClient != null && lstClient.isDisplayed() && !lstClientEnable) {
-			// click | id=borderlayout_center_box_window_rolePanel_lstClient-btn | 
+			// click | id=borderlayout_center_box_window_rolePanel_lstClient-btn |
 			driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstClient-icon")).click();
-			// click | id=borderlayout_center_box_window_rolePanel_lstClient_GardenWorld | 
+			// click | id=borderlayout_center_box_window_rolePanel_lstClient_GardenWorld |
 			driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstClient_GardenWorld")).click();
 			Thread.sleep(1000);
 		}
-		// click | id=rolePanel_grdChooseRole_rowRole_lstRole-btn | 
+		// click | id=rolePanel_grdChooseRole_rowRole_lstRole-btn |
 		driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstRole-icon")).click();
-		// click | id=borderlayout_center_box_window_rolePanel_lstRole_GardenWorld_Admin | 
+		// click | id=borderlayout_center_box_window_rolePanel_lstRole_GardenWorld_Admin |
 		driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstRole_GardenWorld_Admin")).click();
 		Thread.sleep(1000);
-		// click | id=borderlayout_center_box_window_rolePanel_lstOrganisation-btn | 
+		// click | id=borderlayout_center_box_window_rolePanel_lstOrganisation-btn |
 		driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstOrganisation-btn")).click();
-		// click | css=#borderlayout_center_box_window_rolePanel_lstOrganisation_HQ > td.z-comboitem-text | 
+		// click | css=#borderlayout_center_box_window_rolePanel_lstOrganisation_HQ > td.z-comboitem-text |
 		driver.findElement(By.id("borderlayout_center_box_window_rolePanel_lstOrganisation_HQ")).click();
-		// click | rolePanel_Ok | 
+		// click | rolePanel_Ok |
 		driver.findElement(By.id("borderlayout_center_box_window_rolePanel_Ok")).click();
-		// waitForElementPresent | div_borderlayout_north_include_div_box_box_1_box_label | 
+		// waitForElementPresent | div_borderlayout_north_include_div_box_box_1_box_label |
 		for (int second = 0;; second++) {
 			if (second >= 60) fail("timeout");
 			try { if (isElementPresent(By.id("div_borderlayout_north_include_div_box_box_1_box_label"))) break; } catch (Exception e) {}
@@ -121,7 +121,7 @@ public class LoginTest {
 			return false;
 		}
 	}
-	
+
 	protected void waitResponse(int timeout) {
 		long s = System.currentTimeMillis();
 		int i = 0;
@@ -140,7 +140,7 @@ public class LoginTest {
 			sleep(ms);
 		}
 	}
-	
+
 
 	/**
 	 * Causes the currently executing thread to sleep for the specified number of
@@ -155,7 +155,7 @@ public class LoginTest {
 		} catch (InterruptedException e) {
 		}
 	}
-	
+
 	public String getEval(String script) {
 		return String.valueOf(((JavascriptExecutor) driver).executeScript("return (" + script + ");"));
 	}
