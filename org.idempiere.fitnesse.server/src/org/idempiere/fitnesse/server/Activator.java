@@ -13,12 +13,6 @@
  *****************************************************************************/
 package org.idempiere.fitnesse.server;
 
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.StandardCopyOption;
-import java.util.Enumeration;
-
 import org.idempiere.fitnesse.server.fit.OSGiFixtureLoader;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -45,17 +39,6 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
 		FixtureLoader.setInstance(new OSGiFixtureLoader());
-		
-		//create a compy on temp dir and register geckodriver
-		Enumeration<URL> urls = context.getBundle().findEntries("/resources", "geckodriver", false);
-		InputStream originalGeckoStream = urls.nextElement().openStream();
-		File geckoFileCopy = new File(System.getProperty("java.io.tmpdir") + "/geckodriver");
-
-		java.nio.file.Files.copy(originalGeckoStream, geckoFileCopy.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		geckoFileCopy.setExecutable(true, false);
-
-		originalGeckoStream.close();
-		System.setProperty("webdriver.gecko.driver", geckoFileCopy.getPath());
 	}
 
 	/*

@@ -31,10 +31,6 @@ public class LoginTest {
 
 	@Before
 	public void setUp() throws Exception {
-
-	    String userDir = System.getProperty("user.dir");
-		System.setProperty("webdriver.gecko.driver", userDir + "/../org.idempiere.fitnesse.server/resources/geckodriver");
-
 	    var options = new FirefoxOptions();
 		// options.setHeadless(true);
 		options.setCapability("marionette", true);

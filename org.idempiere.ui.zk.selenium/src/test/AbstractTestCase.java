@@ -30,14 +30,9 @@ public class AbstractTestCase {
 	protected Actions actions;
 
 	@Before
-	public void setUp() throws Exception {
-		
-	    String userDir = System.getProperty("user.dir");
-		System.setProperty("webdriver.gecko.driver", userDir + "/../org.idempiere.fitnesse.server/resources/geckodriver");
-
+	public void setUp() throws Exception {	
 		driver = new FirefoxDriver();
 		actions = new Actions(driver);
-//		driver = new ChromeDriver();
 		baseUrl = "https://localhost:8080/webui/";
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
