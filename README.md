@@ -4,7 +4,7 @@ The iDempiere FitNesse is a set of project that aims to easy the integration and
 This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.net/browse/IDEMPIERE-206) and was moved from core with the [IDEMPIERE-4138](https://idempiere.atlassian.net/browse/IDEMPIERE-4138).
 
 ## What is new ?
-* upgrade [FitnNesse](http://fitnesse.org/FrontPage) from v20111026 to v20200501 and [Selenium](https://www.selenium.dev/) from 2.42.2 to 3.141.59
+* upgrade [FitnNesse](http://fitnesse.org/FrontPage) from v20200501 to v20221102 and [Selenium](https://www.selenium.dev/) from 3.141.59 to 4.6.0
   *  own fork of [FitLibrary](https://github.com/muriloht/fitlibrary-fitlibrary) and [FitLibraryWeb](https://github.com/muriloht/fitlibrary-fitlibraryweb)  projects for compatibilization with newest versions
 * JIRA contributions integrated
   * [FitNesse Rollback and InfoWindow read/run process](https://idempiere.atlassian.net/browse/IDEMPIERE-2860)
@@ -12,8 +12,12 @@ This project was started with the [IDEMPIERE-206](https://idempiere.atlassian.ne
   * removed the ZTL project as it's discontinued. [Read more...](https://code.google.com/archive/p/zk-ztl/)
   * [Fixture and test examples for screenshots automation](https://idempiere.atlassian.net/browse/IDEMPIERE-4029)
 * branches reorganization
-  * if you want to use the iDempiere Fitnesse project with an iDempiere version **<= 7.1** please use the **release-7.1** branch
-  * if you are using the iDempiere stable or development version **>= 9.0** then you should use the **master** branch
+  * currently the project is supported only for usage with the iDempiere development version **>= 10 ** - for that you should use the **master** branch
+  * for earlier versions (use at your own risk):
+    * if you want to use the iDempiere Fitnesse project with an iDempiere version **<= 7.1** try the **release-7.1** branch
+    * if you want to use the iDempiere Fitnesse project with an iDempiere version **= 9** try the **release-9** branch
+
+  
 
 ## Projects:
 * fitnesse - fitnesse server console
